@@ -1,0 +1,6 @@
+{
+  "name": "Giáo Viên Sáng Tạo - Kho Học Liệu Số Tiểu Học",
+  "description": "Kho học liệu số dành cho giáo viên cấp Tiểu học: tổng hợp ứng dụng công nghệ, trò chơi tương tác và thí nghiệm mô phỏng phục vụ giảng dạy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

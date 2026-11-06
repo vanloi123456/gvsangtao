@@ -1,0 +1,109 @@
+{
+  "entities": {
+    "EducationalApp": {
+      "title": "EducationalApp",
+      "description": "An educational application or digital tool for elementary school teachers",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "developer": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string", "maxLength": 50 },
+        "categoryLabel": { "type": "string", "maxLength": 100 },
+        "gradeLevel": { "type": "string", "maxLength": 50 },
+        "gradeLabel": { "type": "string", "maxLength": 50 },
+        "url": { "type": "string", "maxLength": 500 },
+        "guideTips": { "type": "string", "maxLength": 1000 },
+        "tags": { "type": "string", "maxLength": 300 },
+        "authorId": { "type": "string", "maxLength": 128 },
+        "authorEmail": { "type": "string", "maxLength": 150 },
+        "authorName": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "category", "authorId"]
+    },
+    "InteractiveGame": {
+      "title": "InteractiveGame",
+      "description": "An interactive classroom game for elementary school students",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "subject": { "type": "string", "maxLength": 50 },
+        "subjectLabel": { "type": "string", "maxLength": 100 },
+        "grade": { "type": "string", "maxLength": 50 },
+        "gradeLabel": { "type": "string", "maxLength": 50 },
+        "gameType": { "type": "string", "maxLength": 50 },
+        "gameTypeLabel": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "playMode": { "type": "string", "maxLength": 30 },
+        "targetSkills": { "type": "string", "maxLength": 300 },
+        "externalUrl": { "type": "string", "maxLength": 500 },
+        "authorId": { "type": "string", "maxLength": 128 },
+        "authorEmail": { "type": "string", "maxLength": 150 },
+        "authorName": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "subject", "description", "authorId"]
+    },
+    "ScienceExperiment": {
+      "title": "ScienceExperiment",
+      "description": "A science simulation lab for elementary school students",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "subject": { "type": "string", "maxLength": 50 },
+        "subjectLabel": { "type": "string", "maxLength": 100 },
+        "topic": { "type": "string", "maxLength": 50 },
+        "topicLabel": { "type": "string", "maxLength": 100 },
+        "grade": { "type": "string", "maxLength": 50 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "learningGoals": { "type": "string", "maxLength": 500 },
+        "simMode": { "type": "string", "maxLength": 50 },
+        "externalUrl": { "type": "string", "maxLength": 500 },
+        "authorId": { "type": "string", "maxLength": 128 },
+        "authorEmail": { "type": "string", "maxLength": 150 },
+        "authorName": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "subject", "description", "authorId"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Teacher profile registered in the educational resource hub",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "school": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["displayName", "email"]
+    }
+  },
+  "firestore": {
+    "/apps/{appId}": {
+      "schema": "EducationalApp",
+      "description": "Shared repository of elementary educational apps and tools"
+    },
+    "/games/{gameId}": {
+      "schema": "InteractiveGame",
+      "description": "Shared repository of interactive classroom games and quizzes"
+    },
+    "/simulations/{simId}": {
+      "schema": "ScienceExperiment",
+      "description": "Shared repository of science simulation models"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Teacher profile and school affiliation"
+    }
+  }
+}
